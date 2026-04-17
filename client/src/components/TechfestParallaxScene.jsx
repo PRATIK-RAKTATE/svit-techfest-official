@@ -80,6 +80,7 @@ export default function TechfestParallaxScene() {
         }
       `}</style>
 
+      {/* image1 */}
       <div className="absolute inset-0">
         <img
           src={buildings}
@@ -96,7 +97,7 @@ export default function TechfestParallaxScene() {
             2025-26
           </p>
           <h1 className="mt-3 text-4xl font-black uppercase tracking-[0.18em] text-cyan-100 drop-shadow-[0_0_20px_rgba(34,211,238,0.5)] sm:text-6xl lg:text-7xl">
-            SVIT
+            SVIT COMP
             <span className="block text-fuchsia-300">tECHFEST</span>
           </h1>
         </div>
@@ -109,13 +110,15 @@ export default function TechfestParallaxScene() {
         draggable="false"
       />
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-[18%] z-20 h-[22vw] min-h-[110px] max-h-[250px] overflow-hidden opacity-90">
+      {/* image2 */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-[18%] z-20 h-[22vw] min-h-[110px] max-h-[250px] overflow-hidden opacity-90 translate-y-[50px] sm:translate-y-0">
         <div className="animate-skyline-slow flex h-full w-[200%] brightness-110 saturate-150">
           {loopingStrip(longBuildings, "Far city buildings")}
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 sm:bottom-[9%] z-30 h-[24vw] min-h-[120px] max-h-[280px] overflow-hidden">
+      {/* image3 */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-[15%] sm:bottom-[9%] z-30 h-[24vw] min-h-[120px] max-h-[280px] overflow-hidden translate-y-[100px] sm:translate-y-0">
         <div className="animate-skyline-fast flex h-full w-[200%] brightness-125 saturate-150">
           {loopingStrip(moreBuildings, "Near city buildings")}
         </div>
