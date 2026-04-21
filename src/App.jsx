@@ -202,7 +202,7 @@ const contacts = [
   ['Hackathon', 'Payal', '878898211'],
   ['Business Plan', 'Dr. D.K. Chandre', '9423065528'],
   ['Project', 'Laukik Lanke', ''],
-  ['Faculty', 'Prof. Rokade', ''],
+  ['Faculty', 'Prof. Sharad Rokade', ''],
 ]
 
 function App() {
