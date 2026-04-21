@@ -1,7 +1,13 @@
 import './App.css'
 
-const registerLink = '#register'
-const whatsappLink = '#updates'
+const registerLink = '#events'
+const whatsappLink = 'https://chat.whatsapp.com/FhOfu5HY9prCO0ADMDzBzr'
+
+const eventLinks = {
+  hackverse: 'https://svit-hackverse.netlify.app/',
+  projectCompetition: 'https://forms.gle/vKo3pF8Stk8Hxyzp9',
+  businessPlan: 'https://forms.gle/5CKqp5rmyTjEx8vJ8',
+}
 
 const stats = [
   ['300+', 'Participants'],
@@ -44,6 +50,7 @@ const detailSections = [
     id: 'hackverse',
     eyebrow: 'Flagship Event',
     title: 'HackVerse - 36 Hour Hackathon',
+    registrationHref: eventLinks.hackverse,
     overview:
       'A 36-hour hackathon where participants build innovative solutions to real-world problems and compete for prizes, internships, and startup opportunities.',
     facts: [
@@ -87,6 +94,7 @@ const detailSections = [
     id: 'business-plan',
     eyebrow: 'Entrepreneurship',
     title: 'Business Plan Contest',
+    registrationHref: eventLinks.businessPlan,
     overview:
       'Present innovative business ideas focusing on real-world problems, sustainability, and technology-driven solutions.',
     facts: [
@@ -152,6 +160,7 @@ const detailSections = [
     id: 'project-competition',
     eyebrow: 'Build Showcase',
     title: 'Project Competition',
+    registrationHref: eventLinks.projectCompetition,
     overview: 'Present innovative technical projects across multiple domains.',
     facts: [
       ['Team Size', '4 members'],
@@ -284,7 +293,12 @@ function App() {
               <p className="section-label">{event.eyebrow}</p>
               <h2>{event.title}</h2>
               <p>{event.overview}</p>
-              <a className="btn btn-primary" href={registerLink}>
+              <a
+                className="btn btn-primary"
+                href={event.registrationHref || registerLink}
+                target={event.registrationHref ? '_blank' : undefined}
+                rel={event.registrationHref ? 'noreferrer' : undefined}
+              >
                 Register Now
               </a>
             </div>
@@ -321,7 +335,7 @@ function App() {
           <p className="section-label">Official Updates</p>
           <h2>Join the TECHX WhatsApp group for announcements.</h2>
         </div>
-        <a className="btn btn-secondary" href={whatsappLink}>
+        <a className="btn btn-secondary" href={whatsappLink} target="_blank" rel="noreferrer">
           Join Official Updates Group
         </a>
       </section>
@@ -352,6 +366,10 @@ function App() {
           />
         </div>
       </section>
+
+      <footer className="site-footer">
+        Made by Pratik Raktate - Dept. Of Computer Engineering
+      </footer>
     </main>
   )
 }

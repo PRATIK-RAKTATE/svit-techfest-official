@@ -366,13 +366,36 @@
 }
 
 .event-card a {
-  position: absolute;
-  left: 26px;
-  bottom: 26px;
+  position: relative;
   z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 42px;
+  margin-top: 20px;
+  padding: 0 18px;
+  border: 1px solid rgba(35, 219, 171, 0.42);
+  border-radius: 999px;
+  background: rgba(35, 219, 171, 0.12);
   color: var(--text);
+  font-size: 0.78rem;
   font-weight: 900;
+  letter-spacing: 0.1em;
   text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.event-card a:hover {
+  transform: translateY(-2px);
+  border-color: var(--signal);
+  background: var(--signal);
+  color: #03110d;
 }
 
 .detail-stack {
@@ -581,6 +604,17 @@
   filter: grayscale(1) contrast(1.08) invert(0.9);
 }
 
+.site-footer {
+  padding: 24px clamp(18px, 5vw, 76px) 34px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1080px) {
   .hero-section,
   .about-grid,
@@ -602,7 +636,7 @@
 @media (max-width: 720px) {
   .site-header {
     position: static;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
   }
 
@@ -612,18 +646,36 @@
   }
 
   .hero-section {
+    gap: 30px;
     min-height: auto;
+    padding: 44px 20px 56px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
   }
 
   .hero-mark {
+    width: 100%;
     min-height: 280px;
+    aspect-ratio: 1.22;
     border-radius: 30px;
   }
 
   .hero-mark img {
-    right: -116px;
-    bottom: 58px;
-    width: 500px;
+    right: auto;
+    left: 50%;
+    bottom: auto;
+    top: 50%;
+    width: min(82vw, 380px);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-mark .orb-one {
+    display: none;
   }
 
   .section-heading,
